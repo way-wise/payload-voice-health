@@ -26,28 +26,31 @@ export const HomeBenefitsBlock: React.FC<HomeBenefitsBlockProps> = ({ benefits, 
       <div className="container">
         <div className="grid grid-row-3 gap-10">
           {benefits.map((benefit, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <div className="mb-6">
+            <div className="bg-[#F2F2F2] p-6 md:p-10 rounded-[8px] sticky top-20">
+              <div className="flex lg:items-center flex-col lg:flex-row lg:gap-20 gap-8">
                 <Image
                   src={benefit.image.url}
                   alt={benefit.title}
-                  width={400}
-                  height={300}
-                  className="w-full h-auto object-cover rounded-lg"
+                  width={500}
+                  height={420}
+                  className="w-full rounded-[8px] md:rounded-[16px] md:w-[500px]"
                 />
+                <div className="flex flex-col md:gap-[33px] gap-[20px] md:max-w-[461px]">
+                  <h2 className="text-[26px] md:text-[40px] text-[#261C53] font-Inter font-semibold md:leading-[48px] leading-7 tracking-[-1px]">
+                    {benefit.title}
+                  </h2>
+                  <div className="flex flex-col md:gap-4 gap-2">
+                    {benefit.points.map((point, index) => (
+                      <div className="flex items-start gap-[5px]" key={index}>
+                        <i className="ri-arrow-right-up-line text-[#5E6672] mr-[5px]"></i>
+                        <p className="text-base md:text-[20px] text-[#5E6672] font-Inter font-normal md:leading-7 leading-6">
+                          {point.point}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <h3 className="text-2xl font-semibold text-[#261C53] mb-4">{benefit.title}</h3>
-              <ul className="space-y-3">
-                {benefit.points.map((point, pointIndex) => (
-                  <li key={pointIndex} className="flex items-start gap-2 text-[#666666]">
-                    <i className="ri-check-line text-[#5F46CF] mt-1"></i>
-                    <span>{point.point}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
           ))}
         </div>

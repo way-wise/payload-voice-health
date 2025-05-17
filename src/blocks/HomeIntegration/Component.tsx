@@ -7,7 +7,7 @@ type Integration = {
   logo: {
     url: string
   }
-  position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
+  position: 'left-1' | 'left-2' | 'left-3' | 'right-1' | 'right-2' | 'right-3'
 }
 
 type HomeIntegrationBlockProps = {
@@ -20,18 +20,15 @@ type HomeIntegrationBlockProps = {
 }
 
 const getPositionClasses = (position: Integration['position']) => {
-  switch (position) {
-    case 'top-left':
-      return 'top-[34%] left-[18%]'
-    case 'top-right':
-      return 'top-[34%] right-[18%]'
-    case 'bottom-left':
-      return 'bottom-[34%] left-[18%]'
-    case 'bottom-right':
-      return 'bottom-[34%] right-[18%]'
-    default:
-      return ''
+  const positions = {
+    'left-1': 'top-[34%] left-[18%]',
+    'left-2': 'top-[60%] left-[10%]',
+    'left-3': 'bottom-[34%] left-[18%]',
+    'right-1': 'top-[34%] right-[18%]',
+    'right-2': 'top-[44%] right-[25%]',
+    'right-3': 'bottom-[13%] right-[16%]',
   }
+  return positions[position] || ''
 }
 
 export const HomeIntegrationBlock: React.FC<HomeIntegrationBlockProps> = ({

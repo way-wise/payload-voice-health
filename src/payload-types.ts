@@ -822,7 +822,7 @@ export interface HomeIntegrationBlock {
          * Recommended size: 120x80px
          */
         logo: string | Media;
-        position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+        position: 'left-1' | 'left-2' | 'left-3' | 'right-1' | 'right-2' | 'right-3';
         id?: string | null;
       }[]
     | null;

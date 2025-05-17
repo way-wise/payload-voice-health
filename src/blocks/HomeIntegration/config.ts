@@ -49,23 +49,31 @@ export const HomeIntegrationBlock: Block = {
           label: 'Logo Position',
           options: [
             {
-              label: 'Top Left',
-              value: 'top-left',
+              label: 'Left 1',
+              value: 'left-1',
             },
             {
-              label: 'Top Right',
-              value: 'top-right',
+              label: 'Left 2',
+              value: 'left-2',
             },
             {
-              label: 'Bottom Left',
-              value: 'bottom-left',
+              label: 'Left 3',
+              value: 'left-3',
             },
             {
-              label: 'Bottom Right',
-              value: 'bottom-right',
+              label: 'Right 1',
+              value: 'right-1',
+            },
+            {
+              label: 'Right 2',
+              value: 'right-2',
+            },
+            {
+              label: 'Right 3',
+              value: 'right-3',
             },
           ],
-          defaultValue: 'top-left',
+          defaultValue: 'left-1',
         },
       ],
     },
