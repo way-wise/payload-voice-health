@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
+import type { Media } from '@/payload-types'
 
 interface Feature {
   title: string
@@ -9,7 +10,7 @@ interface Feature {
 interface ListBlockProps {
   title: string
   description: string
-  image: string
+  image: Media
   features: Feature[]
   backgroundColor?: string
   textColor?: string
@@ -36,8 +37,8 @@ export default function ListBlock({
             {description && <p className="text-gray-600 mb-6">{description}</p>}
             <div className="relative">
               <Image
-                src={image}
-                alt="AI assistant for healthcare"
+                src={image.url || ''}
+                alt={image.alt || 'AI assistant for healthcare'}
                 width={500}
                 height={400}
                 className="rounded-lg w-full h-auto"
