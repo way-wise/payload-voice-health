@@ -133,7 +133,7 @@ export const HomeIntegrationBlock: React.FC<HomeIntegrationBlockProps> = ({
           {integrations.map((logo, i) => (
             <div
               key={i}
-              className="bg-white rounded-md md:rounded-[13px] w-full lg:w-[120px] h-24 lg:h-[80px] border border-[#CCCCCC] p-4 flex items-center justify-center hover:scale-105 transition-transform"
+              className="bg-white !rounded-[6px] md:rounded-[13px] w-full lg:w-[120px] h-24 lg:h-[80px] border border-[#CCCCCC] p-4 flex items-center justify-center hover:scale-105 transition-transform"
             >
               <Image
                 src={logo.logo.url}

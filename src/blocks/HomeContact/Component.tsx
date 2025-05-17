@@ -32,7 +32,7 @@ export const HomeContactBlock: React.FC<HomeContactBlockProps> = ({
           </Link>
           <Link
             href="/contact"
-            className="text-[14px] font-Inter font-semibold leading-[130%] md:flex hidden items-center gap-2 bg-white text-[#5F46CF] px-7 py-[14px] rounded-md transition-colors group w-fit"
+            className="text-[14px] font-Inter font-semibold leading-[130%] md:flex hidden items-center gap-2 bg-white text-[#5F46CF] px-7 py-[14px] !rounded-[6px] transition-colors group w-fit"
           >
             Get in touch
             <i className="ri-arrow-right-up-line group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform"></i>

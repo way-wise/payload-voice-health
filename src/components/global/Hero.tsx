@@ -19,7 +19,7 @@ export default function HeroSection({ data }: { data: Page['hero'] }) {
           <div className="flex items-center gap-4">
             <Link
               href="/contact"
-              className="hidden text-[14px] font-Inter md:flex items-center gap-2 bg-[#5F46CF] text-white px-7 py-[14px] rounded-md transition-colors group"
+              className="hidden text-[14px] font-Inter md:flex items-center gap-2 bg-[#5F46CF] text-white px-7 py-[14px] !rounded-[6px] transition-colors group"
             >
               Get in touch
               <i className="ri-arrow-right-up-line group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform"></i>
@@ -65,7 +65,7 @@ export default function HeroSection({ data }: { data: Page['hero'] }) {
             fill
             className="size-full object-cover aspect-[663/505]"
           />
-          <div className="absolute top-[92%] left-[35%] bg-white border border-[#5F46CF] rounded-md h-16">
+          <div className="absolute top-[92%] left-[35%] bg-white border border-[#5F46CF] !rounded-[6px] h-16">
             <LottieWave />
           </div>
         </div>

@@ -99,7 +99,7 @@ export default function Header({ data }: HeaderProps) {
           {data.ctaButton && (
             <button
               onClick={() => setIsContactFormOpen(true)}
-              className="hidden text-[14px] font-Inter lg:flex items-center gap-2 bg-[#5F46CF] text-white px-7 py-[14px] rounded-md transition-colors group"
+              className="hidden text-[14px] font-Inter lg:flex items-center gap-2 bg-[#5F46CF] text-white px-7 py-[14px] !rounded-[6px] transition-colors group"
             >
               {data.ctaButton.label}
               <i className="ri-arrow-right-up-line group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform"></i>
@@ -215,7 +215,7 @@ export default function Header({ data }: HeaderProps) {
                         setIsOpen(false)
                         setIsContactFormOpen(true)
                       }}
-                      className="w-full flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md transition-colors duration-200"
+                      className="w-full flex items-center justify-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 !rounded-[6px] transition-colors duration-200"
                     >
                       {data.ctaButton.label}
                       <FiArrowRight size={16} />

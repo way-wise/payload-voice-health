@@ -1,12 +1,12 @@
-import React from "react";
-import Image from "next/image";
-import CenterImg from "../../../../public/integration/center_image.png";
-import Modmed from "../../../../public/integration/modmed.png";
-import Athena from "../../../../public/integration/athena.png";
-import Epic from "../../../../public/integration/epic.png";
-import Oracle from "../../../../public/integration/oracle.png";
-import Web from "../../../../public/integration/web.png";
-import Elation from "../../../../public/integration/elation.png";
+import React from 'react'
+import Image from 'next/image'
+import CenterImg from '../../../../public/integration/center_image.png'
+import Modmed from '../../../../public/integration/modmed.png'
+import Athena from '../../../../public/integration/athena.png'
+import Epic from '../../../../public/integration/epic.png'
+import Oracle from '../../../../public/integration/oracle.png'
+import Web from '../../../../public/integration/web.png'
+import Elation from '../../../../public/integration/elation.png'
 
 const IntegrationsSection = () => {
   return (
@@ -26,7 +26,6 @@ const IntegrationsSection = () => {
         </div>
 
         <div className="hidden lg:block">
-
           {/* logo 1 */}
           <div className="group">
             <div className="bg-white rounded-[13px] w-[160px] h-[100px] border border-[#CCCCCC] px-[28px] py-[16px] absolute top-[64%] left-[26%] group-hover:scale-110 transition-transform">
@@ -42,13 +41,7 @@ const IntegrationsSection = () => {
           {/* logo 2 */}
           <div className="group">
             <div className="bg-white rounded-[13px] w-[160px] h-[100px] border border-[#CCCCCC] px-[34px] py-[32px] absolute top-[60%] left-[10%] group-hover:scale-110 transition-transform">
-              <Image
-                src={Epic.src}
-                alt="modmed"
-                width={92}
-                height={35}
-                className="w-full h-full"
-              />
+              <Image src={Epic.src} alt="modmed" width={92} height={35} className="w-full h-full" />
             </div>
           </div>
           {/* logo 3 */}
@@ -90,13 +83,7 @@ const IntegrationsSection = () => {
           {/* logo 6 */}
           <div className="group">
             <div className="bg-white rounded-[13px] w-[160px] h-[100px] border border-[#CCCCCC] px-[23px] py-[27px] absolute top-[36%] right-[8%] group-hover:scale-110 transition-transform">
-              <Image
-                src={Web.src}
-                alt="modmed"
-                width={114}
-                height={46}
-                className="w-full h-full"
-              />
+              <Image src={Web.src} alt="modmed" width={114} height={46} className="w-full h-full" />
             </div>
           </div>
         </div>
@@ -104,7 +91,7 @@ const IntegrationsSection = () => {
           {[Athena, Epic, Modmed, Oracle, Elation, Web].map((logo, i) => (
             <div
               key={i}
-              className="bg-white rounded-md md:rounded-[13px] w-full lg:w-[120px] h-24 lg:h-[80px] border border-[#CCCCCC] p-4 flex items-center justify-center hover:scale-105 transition-transform"
+              className="bg-white !rounded-[6px] md:rounded-[13px] w-full lg:w-[120px] h-24 lg:h-[80px] border border-[#CCCCCC] p-4 flex items-center justify-center hover:scale-105 transition-transform"
             >
               <Image src={logo} alt={`Integration ${i}`} className="w-full h-full object-contain" />
             </div>
@@ -112,7 +99,7 @@ const IntegrationsSection = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default IntegrationsSection;
+export default IntegrationsSection
