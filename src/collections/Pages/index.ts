@@ -14,6 +14,9 @@ import { HomeFeatureBlock } from '../../blocks/HomeFeature/config'
 import { HomeIntegrationBlock } from '../../blocks/HomeIntegration/config'
 import { HomeContactBlock } from '../../blocks/HomeContact/config'
 import { HomeBenefitsBlock } from '../../blocks/HomeBenefits/config'
+import { PageIntroBlock } from '../../blocks/PageIntro/config'
+import { ParagraphBlock } from '../../blocks/ParagraphBlock/config'
+import ListBlock from '../../blocks/ListBlock/config'
 import { hero } from '@/heros/config'
 import { slugField } from '@/fields/slug'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
@@ -95,6 +98,9 @@ export const Pages: CollectionConfig<'pages'> = {
                 HomeIntegrationBlock,
                 HomeContactBlock,
                 HomeBenefitsBlock,
+                PageIntroBlock,
+                ParagraphBlock,
+                ListBlock,
               ],
               required: true,
               admin: {

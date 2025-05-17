@@ -181,6 +181,39 @@ export interface Page {
     | HomeIntegrationBlock
     | HomeContactBlock
     | HomeBenefitsBlock
+    | {
+        title: string;
+        description?: string | null;
+        backgroundImage: string | Media;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'pageIntro';
+      }
+    | {
+        title: string;
+        description: string;
+        image: string | Media;
+        className?: string | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'paragraphBlock';
+      }
+    | {
+        title: string;
+        description: string;
+        image: string | Media;
+        features: {
+          title: string;
+          description: string;
+          id?: string | null;
+        }[];
+        backgroundColor?: ('bg-white' | 'bg-gray-50' | 'bg-purple-50') | null;
+        textColor?: ('text-purple-900' | 'text-gray-900' | 'text-black') | null;
+        accentColor?: ('text-purple-600' | 'text-blue-600' | 'text-green-600') | null;
+        id?: string | null;
+        blockName?: string | null;
+        blockType: 'listBlock';
+      }
   )[];
   meta?: {
     title?: string | null;
@@ -1153,6 +1186,44 @@ export interface PagesSelect<T extends boolean = true> {
         homeIntegration?: T | HomeIntegrationBlockSelect<T>;
         homeContact?: T | HomeContactBlockSelect<T>;
         homeBenefits?: T | HomeBenefitsBlockSelect<T>;
+        pageIntro?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              backgroundImage?: T;
+              id?: T;
+              blockName?: T;
+            };
+        paragraphBlock?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              image?: T;
+              className?: T;
+              id?: T;
+              blockName?: T;
+            };
+        listBlock?:
+          | T
+          | {
+              title?: T;
+              description?: T;
+              image?: T;
+              features?:
+                | T
+                | {
+                    title?: T;
+                    description?: T;
+                    id?: T;
+                  };
+              backgroundColor?: T;
+              textColor?: T;
+              accentColor?: T;
+              id?: T;
+              blockName?: T;
+            };
       };
   meta?:
     | T
@@ -1791,11 +1862,13 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
  */
 export interface Header {
   id: string;
+  logo: string | Media;
   navItems?:
     | {
+        type: 'simple' | 'dropdown';
+        label: string;
         link: {
-          type?: ('reference' | 'custom') | null;
-          newTab?: boolean | null;
+          type: 'reference' | 'custom';
           reference?:
             | ({
                 relationTo: 'pages';
@@ -1806,11 +1879,48 @@ export interface Header {
                 value: string | Post;
               } | null);
           url?: string | null;
-          label: string;
+          newTab?: boolean | null;
         };
+        subItems?:
+          | {
+              label: string;
+              link: {
+                type: 'reference' | 'custom';
+                reference?:
+                  | ({
+                      relationTo: 'pages';
+                      value: string | Page;
+                    } | null)
+                  | ({
+                      relationTo: 'posts';
+                      value: string | Post;
+                    } | null);
+                url?: string | null;
+                newTab?: boolean | null;
+              };
+              id?: string | null;
+            }[]
+          | null;
         id?: string | null;
       }[]
     | null;
+  ctaButton: {
+    label: string;
+    link: {
+      type: 'reference' | 'custom';
+      reference?:
+        | ({
+            relationTo: 'pages';
+            value: string | Page;
+          } | null)
+        | ({
+            relationTo: 'posts';
+            value: string | Post;
+          } | null);
+      url?: string | null;
+      newTab?: boolean | null;
+    };
+  };
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -1848,19 +1958,48 @@ export interface Footer {
  * via the `definition` "header_select".
  */
 export interface HeaderSelect<T extends boolean = true> {
+  logo?: T;
   navItems?:
     | T
     | {
+        type?: T;
+        label?: T;
         link?:
           | T
           | {
               type?: T;
-              newTab?: T;
               reference?: T;
               url?: T;
+              newTab?: T;
+            };
+        subItems?:
+          | T
+          | {
               label?: T;
+              link?:
+                | T
+                | {
+                    type?: T;
+                    reference?: T;
+                    url?: T;
+                    newTab?: T;
+                  };
+              id?: T;
             };
         id?: T;
+      };
+  ctaButton?:
+    | T
+    | {
+        label?: T;
+        link?:
+          | T
+          | {
+              type?: T;
+              reference?: T;
+              url?: T;
+              newTab?: T;
+            };
       };
   updatedAt?: T;
   createdAt?: T;

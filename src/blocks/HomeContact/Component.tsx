@@ -50,7 +50,7 @@ export const HomeContactBlock: React.FC<HomeContactBlockProps> = ({
             referrerPolicy="no-referrer-when-downgrade"
             className="w-full h-full"
           ></iframe>
-          <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
+          {/* <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div> */}
         </div>
       </div>
     </section>

@@ -14,6 +14,9 @@ import { HomeFeatureBlock } from '@/blocks/HomeFeature/Component'
 import { HomeBenefitsBlock } from './HomeBenefits/Component'
 import { HomeIntegrationBlock } from './HomeIntegration/Component'
 import { HomeContactBlock } from './HomeContact/Component'
+import { PageIntroBlock } from './PageIntro/Component'
+import ParagraphBlock from './ParagraphBlock/Component'
+import ListBlock from './ListBlock/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -28,6 +31,9 @@ const blockComponents = {
   homeContact: HomeContactBlock,
   homeIntegration: HomeIntegrationBlock,
   homeBenefits: HomeBenefitsBlock,
+  pageIntro: PageIntroBlock,
+  paragraphBlock: ParagraphBlock,
+  listBlock: ListBlock,
 }
 
 export const RenderBlocks: React.FC<{
