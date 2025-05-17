@@ -14,6 +14,11 @@ export const hero: Field = {
   type: 'group',
   fields: [
     {
+      name: 'title',
+      type: 'text',
+      label: 'Title',
+    },
+    {
       name: 'richText',
       type: 'richText',
       editor: lexicalEditor({
@@ -26,13 +31,18 @@ export const hero: Field = {
           ]
         },
       }),
-      label: false,
+      label: 'Description',
     },
-    linkGroup({
-      overrides: {
-        maxRows: 2,
-      },
-    }),
+    {
+      name: 'rating',
+      type: 'number',
+      label: 'Rating',
+    },
+    // linkGroup({
+    //   overrides: {
+    //     maxRows: 2,
+    //   },
+    // }),
     {
       name: 'media',
       type: 'upload',
