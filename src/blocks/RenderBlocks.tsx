@@ -7,6 +7,13 @@ import { CallToActionBlock } from '@/blocks/CallToAction/Component'
 import { ContentBlock } from '@/blocks/Content/Component'
 import { FormBlock } from '@/blocks/Form/Component'
 import { MediaBlock } from '@/blocks/MediaBlock/Component'
+import { HomeTestimonialsBlock } from '@/blocks/HomeTestimonials/Component'
+import { HomeStatsBlock } from '@/blocks/HomeStats/Component'
+import { HomeClientsBlock } from '@/blocks/HomeClients/Component'
+import { HomeFeatureBlock } from '@/blocks/HomeFeature/Component'
+import { HomeBenefitsBlock } from './HomeBenefits/Component'
+import { HomeIntegrationBlock } from './HomeIntegration/Component'
+import { HomeContactBlock } from './HomeContact/Component'
 
 const blockComponents = {
   archive: ArchiveBlock,
@@ -14,6 +21,13 @@ const blockComponents = {
   cta: CallToActionBlock,
   formBlock: FormBlock,
   mediaBlock: MediaBlock,
+  homeTestimonials: HomeTestimonialsBlock,
+  homeStats: HomeStatsBlock,
+  homeClients: HomeClientsBlock,
+  homeFeature: HomeFeatureBlock,
+  homeContact: HomeContactBlock,
+  homeIntegration: HomeIntegrationBlock,
+  homeBenefits: HomeBenefitsBlock,
 }
 
 export const RenderBlocks: React.FC<{

@@ -168,7 +168,20 @@ export interface Page {
     rating?: number | null;
     media?: (string | null) | Media;
   };
-  layout: (CallToActionBlock | ContentBlock | MediaBlock | ArchiveBlock | FormBlock)[];
+  layout: (
+    | CallToActionBlock
+    | ContentBlock
+    | MediaBlock
+    | ArchiveBlock
+    | FormBlock
+    | HomeTestimonialsBlock
+    | HomeStatsBlock
+    | HomeClientsBlock
+    | HomeFeatureBlock
+    | HomeIntegrationBlock
+    | HomeContactBlock
+    | HomeBenefitsBlock
+  )[];
   meta?: {
     title?: string | null;
     /**
@@ -706,6 +719,159 @@ export interface Form {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeTestimonialsBlock".
+ */
+export interface HomeTestimonialsBlock {
+  title: string;
+  testimonials?:
+    | {
+        name: string;
+        title: string;
+        testimonial: string;
+        image: string | Media;
+        company: string | Media;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'homeTestimonials';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeStatsBlock".
+ */
+export interface HomeStatsBlock {
+  image: string | Media;
+  stats?:
+    | {
+        title: string;
+        description: string;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'homeStats';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeClientsBlock".
+ */
+export interface HomeClientsBlock {
+  title: string;
+  /**
+   * Add at least 6-8 logos for the best visual effect. The logos will automatically slide in an infinite loop.
+   */
+  clients?:
+    | {
+        /**
+         * Recommended size: 152x27px. Upload a transparent PNG for best results.
+         */
+        logo: string | Media;
+        /**
+         * Add a descriptive name for accessibility (e.g., "Company Name Logo")
+         */
+        alt: string;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'homeClients';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeFeatureBlock".
+ */
+export interface HomeFeatureBlock {
+  title: string;
+  subtitle: string;
+  features?:
+    | {
+        label: string;
+        description: string;
+        /**
+         * Upload MP4 video file
+         */
+        video: string | Media;
+        /**
+         * Recommended size: 799x448px
+         */
+        thumbnail: string | Media;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'homeFeature';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeIntegrationBlock".
+ */
+export interface HomeIntegrationBlock {
+  title: string;
+  /**
+   * Recommended size: 158x158px
+   */
+  centerImage: string | Media;
+  integrations?:
+    | {
+        /**
+         * Recommended size: 120x80px
+         */
+        logo: string | Media;
+        position: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'homeIntegration';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeContactBlock".
+ */
+export interface HomeContactBlock {
+  title: string;
+  email: string;
+  /**
+   * Paste the Google Maps embed URL here
+   */
+  mapEmbedUrl: string;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'homeContact';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeBenefitsBlock".
+ */
+export interface HomeBenefitsBlock {
+  benefits?:
+    | {
+        title: string;
+        points?:
+          | {
+              point: string;
+              id?: string | null;
+            }[]
+          | null;
+        /**
+         * Recommended size: 400x300px
+         */
+        image: string | Media;
+        id?: string | null;
+      }[]
+    | null;
+  id?: string | null;
+  blockName?: string | null;
+  blockType: 'homeBenefits';
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "redirects".
  */
 export interface Redirect {
@@ -980,6 +1146,13 @@ export interface PagesSelect<T extends boolean = true> {
         mediaBlock?: T | MediaBlockSelect<T>;
         archive?: T | ArchiveBlockSelect<T>;
         formBlock?: T | FormBlockSelect<T>;
+        homeTestimonials?: T | HomeTestimonialsBlockSelect<T>;
+        homeStats?: T | HomeStatsBlockSelect<T>;
+        homeClients?: T | HomeClientsBlockSelect<T>;
+        homeFeature?: T | HomeFeatureBlockSelect<T>;
+        homeIntegration?: T | HomeIntegrationBlockSelect<T>;
+        homeContact?: T | HomeContactBlockSelect<T>;
+        homeBenefits?: T | HomeBenefitsBlockSelect<T>;
       };
   meta?:
     | T
@@ -1076,6 +1249,125 @@ export interface FormBlockSelect<T extends boolean = true> {
   form?: T;
   enableIntro?: T;
   introContent?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeTestimonialsBlock_select".
+ */
+export interface HomeTestimonialsBlockSelect<T extends boolean = true> {
+  title?: T;
+  testimonials?:
+    | T
+    | {
+        name?: T;
+        title?: T;
+        testimonial?: T;
+        image?: T;
+        company?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeStatsBlock_select".
+ */
+export interface HomeStatsBlockSelect<T extends boolean = true> {
+  image?: T;
+  stats?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeClientsBlock_select".
+ */
+export interface HomeClientsBlockSelect<T extends boolean = true> {
+  title?: T;
+  clients?:
+    | T
+    | {
+        logo?: T;
+        alt?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeFeatureBlock_select".
+ */
+export interface HomeFeatureBlockSelect<T extends boolean = true> {
+  title?: T;
+  subtitle?: T;
+  features?:
+    | T
+    | {
+        label?: T;
+        description?: T;
+        video?: T;
+        thumbnail?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeIntegrationBlock_select".
+ */
+export interface HomeIntegrationBlockSelect<T extends boolean = true> {
+  title?: T;
+  centerImage?: T;
+  integrations?:
+    | T
+    | {
+        logo?: T;
+        position?: T;
+        id?: T;
+      };
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeContactBlock_select".
+ */
+export interface HomeContactBlockSelect<T extends boolean = true> {
+  title?: T;
+  email?: T;
+  mapEmbedUrl?: T;
+  id?: T;
+  blockName?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "HomeBenefitsBlock_select".
+ */
+export interface HomeBenefitsBlockSelect<T extends boolean = true> {
+  benefits?:
+    | T
+    | {
+        title?: T;
+        points?:
+          | T
+          | {
+              point?: T;
+              id?: T;
+            };
+        image?: T;
+        id?: T;
+      };
   id?: T;
   blockName?: T;
 }
