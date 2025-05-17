@@ -149,6 +149,7 @@ export interface Page {
   id: string;
   title: string;
   hero?: {
+    type: 'withHero' | 'withoutHero';
     title?: string | null;
     richText?: {
       root: {
@@ -190,10 +191,11 @@ export interface Page {
         blockType: 'pageIntro';
       }
     | {
-        title: string;
-        description: string;
-        image: string | Media;
-        className?: string | null;
+        title?: string | null;
+        description?: string | null;
+        image?: (string | null) | Media;
+        imagePosition?: ('left' | 'right') | null;
+        backgroundColor?: ('gray-background' | 'white-background') | null;
         id?: string | null;
         blockName?: string | null;
         blockType: 'paragraphBlock';
@@ -1166,6 +1168,7 @@ export interface PagesSelect<T extends boolean = true> {
   hero?:
     | T
     | {
+        type?: T;
         title?: T;
         richText?: T;
         rating?: T;
@@ -1201,7 +1204,8 @@ export interface PagesSelect<T extends boolean = true> {
               title?: T;
               description?: T;
               image?: T;
-              className?: T;
+              imagePosition?: T;
+              backgroundColor?: T;
               id?: T;
               blockName?: T;
             };

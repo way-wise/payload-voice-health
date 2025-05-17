@@ -1,22 +1,26 @@
 import Image from 'next/image'
 import type { Media } from '@/payload-types'
+import { cn } from '@/utilities/ui'
 
 export type ParagraphBlockType = {
   title: string
   description: string
   image: Media
   className?: string
+  imagePosition: 'left' | 'right'
   blockType: 'paragraphBlock'
+  backgroundColor: 'gray-background' | 'white-background'
 }
 
 export default function ParagraphBlock({
   title,
   description,
   image,
-  className = '',
+  imagePosition,
+  backgroundColor = 'white-background',
 }: ParagraphBlockType) {
   return (
-    <div className={`py-16 ${className}`}>
+    <div className={cn('py-16', backgroundColor)}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <div>
@@ -25,7 +29,7 @@ export default function ParagraphBlock({
             )}
             {description && <p className="text-gray-600 text-lg">{description}</p>}
           </div>
-          <div className="relative">
+          <div className={cn('relative', imagePosition === 'right' ? 'order-last' : '')}>
             <Image
               src={image.url || ''}
               alt={

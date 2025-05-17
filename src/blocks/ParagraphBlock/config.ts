@@ -10,26 +10,41 @@ export const ParagraphBlock: Block = {
     {
       name: 'title',
       type: 'text',
-      required: true,
+      required: false,
       label: 'Title',
     },
     {
       name: 'description',
       type: 'textarea',
-      required: true,
+      required: false,
       label: 'Description',
     },
     {
       name: 'image',
       type: 'upload',
       relationTo: 'media',
-      required: true,
+      required: false,
       label: 'Image',
     },
     {
-      name: 'className',
-      type: 'text',
-      label: 'Additional CSS Classes',
+      name: 'imagePosition',
+      type: 'select',
+      options: [
+        { label: 'Left', value: 'left' },
+        { label: 'Right', value: 'right' },
+      ],
+      required: false,
+      label: 'Image Position',
+    },
+    {
+      name: 'backgroundColor',
+      type: 'select',
+      options: [
+        { label: 'Gray', value: 'gray-background' },
+        { label: 'White', value: 'white-background' },
+      ],
+      required: false,
+      label: 'Background Color',
     },
   ],
 }

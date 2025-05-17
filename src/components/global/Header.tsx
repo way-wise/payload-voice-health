@@ -28,7 +28,9 @@ export default function Header({ data }: HeaderProps) {
 
   const getLinkHref = (link: any) => {
     if (link.type === 'reference' && link.reference) {
-      return `/${link.reference.relationTo}/${link.reference.value.slug}`
+      return link.reference.relationTo === 'posts'
+        ? `/posts/${link.reference.value.slug}`
+        : `/${link.reference.value.slug}`
     }
     return link.url || '#'
   }
