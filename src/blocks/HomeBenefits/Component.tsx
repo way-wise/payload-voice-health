@@ -26,7 +26,7 @@ export const HomeBenefitsBlock: React.FC<HomeBenefitsBlockProps> = ({ benefits, 
       <div className="container">
         <div className="grid grid-row-3 gap-10">
           {benefits.map((benefit, index) => (
-            <div className="bg-[#F2F2F2] p-6 md:p-10 rounded-[8px] sticky top-20">
+            <div className="bg-[#F2F2F2] p-6 md:p-10 rounded-[8px] sticky top-20" key={index}>
               <div className="flex lg:items-center flex-col lg:flex-row lg:gap-20 gap-8">
                 <Image
                   src={benefit.image.url}
